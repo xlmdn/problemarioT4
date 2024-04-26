@@ -55,7 +55,8 @@ El método del trapecio es uno de los métodos de integración numérica más si
 
 ## Implementacion Método Trapecio
 
-public static void main(String[] args) {
+public class trapecio {
+    public static void main(String[] args) {
         //funcion 2x+ 10 en a=1 b=3
         int a,b,fa,fb,res;
         a=1;
@@ -65,6 +66,7 @@ public static void main(String[] args) {
         res=(b-a)*((fa+fb)/2);
         System.out.println("El area del trapecio es: "+res);
     }
+}
 
 ## Ejemplos Trapecio
 

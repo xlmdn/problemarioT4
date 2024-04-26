@@ -23,12 +23,12 @@ En este repositorio, no solo encontrarás la descripción teórica de cada méto
 - [Implementación](#implementacion-método-trapecio)
 
 
-## Método Gauss Seidel
+## Método Simpson 1/3
 
-- [Descripción](#descripción-gauss-seidel)
-- [Algoritmo](#algoritmo-gauss-seidel)
-- [Ejemplos](#ejemplos-gauss-seidel)
-- [Implementación](#implementación-gauss-seidel)
+- [Descripción](#descripción-simpson-1/3)
+- [Algoritmo](#algoritmo-simpson-1/3)
+- [Ejemplos](#ejemplos-simpson-1/3)
+- [Implementación](#implementación-simpson-1/3)
 
 ## Método Eliminación Gaussiana
 
@@ -78,232 +78,55 @@ public static void main(String[] args) {
 
 ## Ejemplo 3
 
-entrada
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/a902a0f5-fe5b-41a5-97d5-f84553d87c86)
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/ea0a7857-abd1-4b31-9297-7f0ec1222bea)
-
-
-salida
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/c0600fdb-042d-466a-9ce1-80e6d9009b4b)
 
 ## Ejemplo 4
 
-entrada
 
-![image](https://github.com/xlmdn/problemario/assets/147437527/c96cf10c-6258-4ec2-ad62-a2247e053429)
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/871cef1d-64ba-497c-8eec-bd89f7380da3)
-
-salida
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/bd345a8e-5748-4fea-b660-cd2f8a056d51)
 
 ## Ejemplo 5
 
-entrada
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/f8e099db-8760-482f-829b-9b7d206077f6)
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/61f04ce2-a730-4508-85b2-a009b85f0882)
-
-salida
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/c2de7af7-329f-4702-ba19-7b094c5e04c0)
 
 
 
 
 
 
+## Método Simpson 1/3
 
-## Método Gauss Seidel
+### Descripción Simpson 1/3
 
-### Descripción Gauss Seidel
+El método de Simpson 1/3 es un método más preciso que el método del trapecio y utiliza polinomios de segundo orden (parábolas) para estimar el área bajo la curva. Divide el intervalo de integración en segmentos de igual longitud y aplica la fórmula de Simpson 1/3 en cada par de segmentos adyacentes.
 
-El método de Gauss-Seidel es un algoritmo iterativo utilizado para resolver sistemas de ecuaciones lineales. Su objetivo es encontrar las soluciones aproximadas del sistema iterando a través de cada ecuación y actualizando las incógnitas en cada paso. 
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/e1202242-9365-4d07-8471-8bb3943e292f)
-
-
-### Algoritmo Gauss Seidel
-
--Inicialización: Establecer una estimación inicial para las incógnitas.
-
--Iteración:
-
-Para cada ecuación del sistema:
-
-Resolver la ecuación utilizando las incógnitas actualizadas.
-
-Actualizar las incógnitas con los nuevos valores calculados.
-
-Repetir hasta convergencia.
-
--Condición de Convergencia: Verificar si se alcanza una convergencia aceptable.
-
--Salida: Tomar las soluciones aproximadas como soluciones del sistema.
-
-## Implementación Gauss Seidel
+![image](https://github.com/xlmdn/problemarioT4/assets/147437527/2bc0b915-aacc-47ea-8a9b-3d98dad70ffc)
 
 
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+### Algoritmo Simpson 1/3
 
-        System.out.print("Ingrese el tamaño de la matriz y el vector de resultados: ");
-        int n = scanner.nextInt();
+![image](https://github.com/xlmdn/problemarioT4/assets/147437527/a7b9a805-7cc9-4c9c-a6ec-d749085a0d35)
 
-        double[][] matrizA = new double[n][n];
-        double[] vectorB = new double[n];
 
-        System.out.println("Ingrese los elementos de la matriz A:");
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                matrizA[i][j] = scanner.nextDouble();
-            }
-        }
+## Implementación Simpson 1/3
 
-        System.out.println("Ingrese el vector de resultados b:");
-        for (int i = 0; i < n; i++) {
-            vectorB[i] = scanner.nextDouble();
-        }
-
-        System.out.println("Matriz A:");
-        imprimirMatriz(matrizA);
-
-        System.out.println("Vector b:");
-        imprimirVector(vectorB);
-
-        double[] vectorX = new double[n];
-        double[] vectorXNuevo = new double[n];
-        int maxIteraciones = 1000;
-        double tolerancia = 1e-6;
-
-        for (int iteracion = 0; iteracion < maxIteraciones; iteracion++) {
-            for (int i = 0; i < n; i++) {
-                double suma = 0.0;
-                for (int j = 0; j < n; j++) {
-                    if (j != i) {
-                        suma += matrizA[i][j] * vectorXNuevo[j];
-                    }
-                }
-                vectorXNuevo[i] = (vectorB[i] - suma) / matrizA[i][i];
-            }
-            if (norma(restar(vectorXNuevo, vectorX)) < tolerancia) {
-                vectorX = vectorXNuevo.clone();
-                break;
-            }
-            vectorX = vectorXNuevo.clone();
-        }
-
-        System.out.println("La solución al sistema de ecuaciones es:");
-        imprimirVector(vectorX);
-    }
-
-    public static double norma(double[] v) {
-        double suma = 0.0;
-        for (double num : v) {
-            suma += num * num;
-        }
-        return Math.sqrt(suma);
-    }
-
-    public static double[] restar(double[] v1, double[] v2) {
-        int n = v1.length;
-        double[] resultado = new double[n];
-        for (int i = 0; i < n; i++) {
-            resultado[i] = v1[i] - v2[i];
-        }
-        return resultado;
-    }
-
-    public static void imprimirMatriz(double[][] matriz) {
-        for (double[] fila : matriz) {
-            for (double num : fila) {
-                System.out.print(num + " ");
-            }
-            System.out.println();
-        }
-    }
-
-    public static void imprimirVector(double[] vector) {
-        for (double num : vector) {
-            System.out.print(num + " ");
-        }
-        System.out.println();
+public static void main(String[] args) {
+        // función 2x^2 + 10 en a=1, b=3
+        int a, b, fa, fb;
+        double fq, fqq,res;
+        a = 1;
+        b = 3;
+        fa = 2 *(a*a) + 10;
+        fb = 2 * (b*b) + 10;
+        fq = (a + b) / 2.0; // Usar double para evitar truncamiento
+        fqq = 2 * (fq*fq) + 10;
+        res = (int) ((b - a) / 6.0 * (fa + 4 * fqq + fb)); // Convertir a int al final
+        System.out.println("El área bajo la curva es: " + res);
     }
 
 
-
-### Ejemplos Gauss Seidel
+### Ejemplos Simpson 1/3
 
 ## Ejemplo 1
 
-entrada
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/5f447999-4ab3-4b51-bbf2-3eda3a3e8539)
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/d4517535-3b2d-48c6-8194-a6e7a059d19e)
-
-salida
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/d521dd63-e3c0-42ca-b1c4-f52e6e03ecbc)
-
-## Ejemplo 2
-
-entrada
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/d7eca18d-8ee3-4b0a-8772-3e46aa647eeb)
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/423c58fd-8da7-400b-aa16-e4ce2dc21a25)
-
-
-salida
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/2471c22f-0f4b-4155-9bc8-04f6e2f68c75)
-
-## Ejemplo 3
-
-entrada
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/2e8d78e6-728a-4ab0-bcb1-bd9b267d4805)
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/554bec45-0e89-4eae-a0dc-6bd44bd3786a)
-
-
-salida
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/c012cc3a-939e-4fd8-b3b4-e452308978e4)
-
-## Ejemplo 4
-
-entrada
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/77bfcce2-8244-49e2-a5b5-c0c8ef0f1364)
-
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/cc748e25-01de-4f41-be38-3721190988df)
-
-
-salida
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/6475cd9e-7549-4422-9c7d-dd363a5414df)
-
-
-## Ejemplo 5
-
-entrada
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/baa3dae9-87d1-40c8-962e-247f84b41eda)
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/22c8ef2b-5cc5-4131-9183-67dde584441b)
-
-salida
-
-![image](https://github.com/xlmdn/problemario/assets/147437527/29e55634-2f44-45e3-b1e5-f17a32b5088f)
 
 
 ## Método Eliminación Gaussiana

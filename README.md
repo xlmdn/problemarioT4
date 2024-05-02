@@ -131,7 +131,7 @@ public static void main(String[] args) {
 
 
 
-## Método Eliminación Gaussiana
+## Método Simpson Tres Octavos
 
 ### Descripción Simpson tres octavos
 
@@ -150,7 +150,8 @@ La idea principal detrás del método de Simpson 3/8 es aproximar el área bajo 
 
 # Implementación Eliminación Gaussiana
 
-public static void main(String[] args) {
+public class simpson3 {
+    public static void main(String[] args) {
         // función 2x + 10 en a=1, b=3
         double a,b,f1,f2,f3,f4,res,h,c,d;
         a=1;
@@ -165,6 +166,8 @@ public static void main(String[] args) {
         res=(3*h/8)*(f1+3*f2+3*f3+f4);
         System.out.println("El área bajo la curva es: "+res);
     }
+}
+
 
 ### Ejemplos simpson tres octavos
 

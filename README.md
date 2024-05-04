@@ -106,19 +106,19 @@ El método de Simpson 1/3 es un método más preciso que el método del trapecio
 
 ## Implementación Simpson 1/3
 
-public static void main(String[] args) {
-        // función 2x^2 + 10 en a=1, b=3
-        int a, b, fa, fb;
-        double fq, fqq,res;
-        a = 1;
-        b = 3;
-        fa = 2 *(a*a) + 10;
-        fb = 2 * (b*b) + 10;
-        fq = (a + b) / 2.0; // Usar double para evitar truncamiento
-        fqq = 2 * (fq*fq) + 10;
-        res = (int) ((b - a) / 6.0 * (fa + 4 * fqq + fb)); // Convertir a int al final
-        System.out.println("El área bajo la curva es: " + res);
-    }
+      public static void main(String[] args) {
+              // función 2x^2 + 10 en a=1, b=3
+              int a, b, fa, fb;
+              double fq, fqq,res;
+              a = 1;
+              b = 3;
+              fa = 2 *(a*a) + 10;
+              fb = 2 * (b*b) + 10;
+              fq = (a + b) / 2.0; // Usar double para evitar truncamiento
+              fqq = 2 * (fq*fq) + 10;
+              res = (int) ((b - a) / 6.0 * (fa + 4 * fqq + fb)); // Convertir a int al final
+              System.out.println("El área bajo la curva es: " + res);
+          }
 
 
 ### Ejemplos Simpson 1/3
@@ -158,23 +158,23 @@ La idea principal detrás del método de Simpson 3/8 es aproximar el área bajo 
 
 # Implementación Simpson Tres Octavos
 
-public class simpson3 {
-    public static void main(String[] args) {
-        // función 2x + 10 en a=1, b=3
-        double a,b,f1,f2,f3,f4,res,h,c,d;
-        a=1;
-        b=3;
-        h=(b-a)/3;
-        c=a+h;
-        d=c+h;
-        f1=2*a+10;
-        f2=2*c+10;
-        f3=2*d+10;
-        f4=2*b+10;
-        res=(3*h/8)*(f1+3*f2+3*f3+f4);
-        System.out.println("El área bajo la curva es: "+res);
-    }
-}
+      public class simpson3 {
+          public static void main(String[] args) {
+              // función 2x + 10 en a=1, b=3
+              double a,b,f1,f2,f3,f4,res,h,c,d;
+              a=1;
+              b=3;
+              h=(b-a)/3;
+              c=a+h;
+              d=c+h;
+              f1=2*a+10;
+              f2=2*c+10;
+              f3=2*d+10;
+              f4=2*b+10;
+              res=(3*h/8)*(f1+3*f2+3*f3+f4);
+              System.out.println("El área bajo la curva es: "+res);
+          }
+      }
 
 
 ### Ejemplos simpson tres octavos

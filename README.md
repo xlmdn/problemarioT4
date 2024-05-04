@@ -72,21 +72,17 @@ El método del trapecio es uno de los métodos de integración numérica más si
 
 ## Ejemplo 1
 
+![image](https://github.com/xlmdn/problemarioT4/assets/147437527/10dceecd-fd33-4785-b5fc-6be81ae7c77c)
 
 
 ## Ejemplo 2
 
+![image](https://github.com/xlmdn/problemarioT4/assets/147437527/f8f49cff-aa26-4b84-ab43-eb5f9bbef772)
 
 
 ## Ejemplo 3
 
-
-## Ejemplo 4
-
-
-
-## Ejemplo 5
-
+![image](https://github.com/xlmdn/problemarioT4/assets/147437527/bbf9b64a-dfdb-4cb1-8b4e-21b8689884cd)
 
 
 
@@ -129,6 +125,18 @@ public static void main(String[] args) {
 
 ## Ejemplo 1
 
+![image](https://github.com/xlmdn/problemarioT4/assets/147437527/d2e188c8-4a7d-4ebd-907d-d237171e458c)
+
+
+## Ejemplo 2
+
+![image](https://github.com/xlmdn/problemarioT4/assets/147437527/8a00c774-6827-4db8-bece-4148cc296dcb)
+
+
+## Ejemplo 3
+
+![image](https://github.com/xlmdn/problemarioT4/assets/147437527/7abf5266-db21-4180-9696-99ac3e01fb83)
+
 
 
 ## Método Simpson Tres Octavos
@@ -148,7 +156,7 @@ La idea principal detrás del método de Simpson 3/8 es aproximar el área bajo 
 
 ![image](https://github.com/xlmdn/problemarioT4/assets/147437527/c597ffef-bde8-4412-884b-40ab37ba30e4)
 
-# Implementación Eliminación Gaussiana
+# Implementación Simpson Tres Octavos
 
 public class simpson3 {
     public static void main(String[] args) {
@@ -173,16 +181,17 @@ public class simpson3 {
 
 ## Ejemplo 1
 
+![image](https://github.com/xlmdn/problemarioT4/assets/147437527/6d562218-369a-433b-9bea-7f9caa5413ce)
+
 
 ## Ejemplo 2
+
+![image](https://github.com/xlmdn/problemarioT4/assets/147437527/e2db340f-e276-4a5d-a5d6-e796019380fe)
 
 
 ## Ejemplo 3
 
-## Ejemplo 4
-
-
-## Ejemplo 5
+![image](https://github.com/xlmdn/problemarioT4/assets/147437527/0d9bc670-b5cc-4d2c-8ae3-cc796e045e0c)
 
 
 

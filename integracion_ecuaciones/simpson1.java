@@ -11,5 +11,6 @@ public class simpson1 {
         fqq = 2 * (fq*fq) + 10;
         res = (int) ((b - a) / 6.0 * (fa + 4 * fqq + fb)); // Convertir a int al final
         System.out.println("El área bajo la curva es: " + res);
+        System.out.println("hola mundo commit");
     }
 }
